@@ -16,6 +16,14 @@ class Window(QtWidgets.QMainWindow):
         self.setup()
         self.show()
 
+    def _setup_home_page(self):
+        btn_select_database = self.findChild(QPushButton, 'btn_select_database')
+        btn_select_database.clicked.connect(lambda: self._select_database())
+        btn_home_continue = self.findChild(QPushButton, 'btn_home_continue')
+        btn_home_continue.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
+        btn_exit = self.findChild(QPushButton, 'btn_exit')
+        btn_exit.clicked.connect(lambda: self.close())
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
