@@ -10,6 +10,9 @@ class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super(Window, self).__init__()
         uic.loadUi(INTERFACE_DIR, self)
+
+        self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
+
         self.setup()
         self.show()
 
