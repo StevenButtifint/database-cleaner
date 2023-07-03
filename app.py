@@ -28,10 +28,13 @@ class Window(QtWidgets.QMainWindow):
         btn_tools_back = self.findChild(QPushButton, 'btn_tools_back')
         btn_tools_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'home_page')))
         btn_analysis_page = self.findChild(QPushButton, 'btn_analysis_page')
-        btn_analysis_page.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page')))
+        btn_analysis_page.clicked.connect(lambda: self.start_database_analysis())
         btn_cleaning_page = self.findChild(QPushButton, 'btn_cleaning_page')
         btn_cleaning_page.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'cleaning_page')))
 
+    def _setup_analysis_page(self):
+        analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
+        analysis_page_stack.setCurrentWidget(self.findChild(QWidget, 'completeness'))
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
