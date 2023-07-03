@@ -16,6 +16,12 @@ class Window(QtWidgets.QMainWindow):
         self.setup()
         self.show()
 
+    def setup(self):
+        self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'home_page'))
+        self._setup_home_page()
+        self._setup_tools_page()
+        self._setup_analysis_page()
+
     def _setup_home_page(self):
         btn_select_database = self.findChild(QPushButton, 'btn_select_database')
         btn_select_database.clicked.connect(lambda: self._select_database())
