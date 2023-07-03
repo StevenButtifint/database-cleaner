@@ -26,7 +26,7 @@
    <enum>Qt::PreventContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Database Cleaner</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -51,7 +51,7 @@
     <item>
      <widget class="QStackedWidget" name="main_page_stack">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="home_page">
        <property name="styleSheet">
@@ -631,29 +631,6 @@ QFrame {
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="frame_12">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <widget class="QLabel" name="label">
-              <property name="geometry">
-               <rect>
-                <x>400</x>
-                <y>80</y>
-                <width>47</width>
-                <height>13</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>TextLabel</string>
-              </property>
-             </widget>
-            </widget>
-           </item>
-           <item>
             <spacer name="verticalSpacer_5">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -665,6 +642,16 @@ QFrame {
               </size>
              </property>
             </spacer>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_14">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+            </widget>
            </item>
            <item>
             <widget class="QFrame" name="frame_13">
@@ -680,9 +667,9 @@ QFrame {
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <layout class="QVBoxLayout" name="verticalLayout_9">
               <property name="spacing">
-               <number>0</number>
+               <number>20</number>
               </property>
               <property name="leftMargin">
                <number>0</number>
@@ -709,6 +696,25 @@ QFrame {
                 </property>
                 <property name="text">
                  <string>Operations</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="font">
+                 <font>
+                  <family>Microsoft YaHei</family>
+                  <pointsize>14</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgba(255, 255, 255, 200);</string>
+                </property>
+                <property name="text">
+                 <string>Selected: database.csv</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -813,18 +819,18 @@ QFrame {
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>icons/chart.png</normaloff>icons/chart.png</iconset>
+                     <normaloff>icons/analysing_w_o.png</normaloff>icons/analysing_w_o.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
-                     <width>100</width>
-                     <height>100</height>
+                     <width>280</width>
+                     <height>280</height>
                     </size>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_2">
+                  <widget class="QPushButton" name="btn_analysis_page">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -868,7 +874,8 @@ QPushButton:hover {
                 </property>
                 <property name="styleSheet">
                  <string notr="true">background-color: rgba(206, 206, 206, 70);
-border-radius: 0px;</string>
+border-radius: 0px;
+opacity: 0.5;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -907,25 +914,27 @@ border-radius: 0px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">border: 0px;</string>
+                    <string notr="true">img {
+        opacity: 0;
+}</string>
                    </property>
                    <property name="text">
                     <string/>
                    </property>
                    <property name="icon">
                     <iconset>
-                     <normaloff>icons/broom.png</normaloff>icons/broom.png</iconset>
+                     <normaloff>icons/mop_w_o.png</normaloff>icons/mop_w_o.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
-                     <width>100</width>
-                     <height>100</height>
+                     <width>250</width>
+                     <height>250</height>
                     </size>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="btn_cleaning_page">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
