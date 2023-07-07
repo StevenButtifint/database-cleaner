@@ -43,6 +43,8 @@ class Window(QtWidgets.QMainWindow):
         analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
         analysis_page_stack.setCurrentWidget(self.findChild(QWidget, 'completeness'))
 
+        btn_analysis_results_back = self.findChild(QPushButton, 'btn_analysis_results_back')
+        btn_analysis_results_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
 
     def _setup_cleaning_page(self):
         btn_cleaning_back = self.findChild(QPushButton, 'btn_cleaning_back')
