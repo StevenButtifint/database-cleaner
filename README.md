@@ -8,7 +8,6 @@
 ### Table of Contents
 - [Description](#description)
 - [What I Learned](#what-i-learned)
-- [References](#references)
 
 ---
 
