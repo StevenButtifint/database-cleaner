@@ -50,6 +50,11 @@ class Window(QtWidgets.QMainWindow):
         btn_cleaning_back = self.findChild(QPushButton, 'btn_cleaning_back')
         btn_cleaning_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
 
+    def switch_operations_page(self):
+        lbl_selected_database = self.findChild(QLabel, 'lbl_selected_database')
+        lbl_selected_database.setText(str(self.database_name))
+        self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     window = Window()
