@@ -1,7 +1,8 @@
 # Database Cleaner
  
-### Demo Video
-coming soon
+### Demo Image
+<img src="https://github.com/stevenbuttifint/database-cleaner/blob/main/demo/demo_completeness.JPG?raw=true" width=99% height=100%>
+**demo video coming soon**
 
 ---
 ### Table of Contents
