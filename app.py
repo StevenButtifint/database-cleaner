@@ -55,6 +55,19 @@ class Window(QtWidgets.QMainWindow):
         lbl_selected_database.setText(str(self.database_name))
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
 
+    def select_database(self):
+        self.set_database_dir()
+        self.set_database_name()
+
+    def set_database_name(self):
+        database_name = self.database_dir.split("/")[-1]
+        self.database_name = database_name
+
+    def set_database_dir(self):
+        self.database_dir = select_csv()
+        qle_selected_database = self.findChild(QLineEdit, 'qle_selected_database')
+        qle_selected_database.setText(self.database_dir)
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     window = Window()
