@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1026</width>
-    <height>550</height>
+    <width>1000</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>900</width>
-    <height>550</height>
+    <width>1000</width>
+    <height>565</height>
    </size>
   </property>
   <property name="sizeIncrement">
@@ -36,6 +36,12 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <property name="spacing">
      <number>0</number>
@@ -54,6 +60,12 @@
     </property>
     <item>
      <widget class="QStackedWidget" name="main_page_stack">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="currentIndex">
        <number>3</number>
       </property>
@@ -809,7 +821,7 @@ QPushButton:hover {
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>40</height>
            </size>
           </property>
           <property name="frameShape">
@@ -1584,7 +1596,7 @@ QPushButton:hover {
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>50</height>
+               <height>40</height>
               </size>
              </property>
              <property name="frameShape">
@@ -1701,16 +1713,16 @@ QFrame {
             <number>0</number>
            </property>
            <property name="leftMargin">
-            <number>20</number>
+            <number>8</number>
            </property>
            <property name="topMargin">
-            <number>20</number>
+            <number>8</number>
            </property>
            <property name="rightMargin">
-            <number>20</number>
+            <number>8</number>
            </property>
            <property name="bottomMargin">
-            <number>5</number>
+            <number>8</number>
            </property>
            <item>
             <widget class="QLabel" name="label">
@@ -1737,6 +1749,12 @@ background-color: rgba(255, 255, 255, 100);</string>
         </item>
         <item>
          <widget class="QTabWidget" name="analysis_page_stack">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>Microsoft YaHei</family>
@@ -1764,16 +1782,49 @@ QTabWidget::pane {
 	background-color: rgba(255, 255, 255, 200);
 }</string>
           </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::North</enum>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Rounded</enum>
+          </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="completeness">
            <attribute name="title">
             <string>Completeness</string>
            </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame_17">
+              <property name="minimumSize">
+               <size>
+                <width>410</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>450</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
@@ -1781,31 +1832,21 @@ QTabWidget::pane {
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_11">
-               <item>
-                <widget class="QLabel" name="label_4">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>16</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(255, 255, 255);</string>
-                 </property>
-                 <property name="text">
-                  <string>Overall Null Percentage: 20%</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_18">
                  <property name="frameShape">
@@ -1814,6 +1855,176 @@ QTabWidget::pane {
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_19">
+                  <item>
+                   <widget class="QFrame" name="frame_19">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_20">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="lbl_overall_null_percent">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>18</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>Overall Null Percentage: -</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_33">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_18">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>25</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QTableWidget" name="tbl_null_per_column">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">            QTableWidget {
+                background-color: rgba(255, 255, 255, 0);
+                border: 0px solid white;
+            }
+            QTableWidget::item {
+                padding: 5px;
+ 				border: 1px solid white;
+				color: white;
+            }
+            QHeaderView::section {
+                 border: 1px solid white;
+				background-color: rgba(255, 255, 255, 0);
+                color: white;
+                padding: 5px;
+            }
+            QTableWidget::item:selected {
+                background-color: rgba(255, 255, 255, 0);
+                color: white;
+            }</string>
+                       </property>
+                       <property name="lineWidth">
+                        <number>0</number>
+                       </property>
+                       <property name="sizeAdjustPolicy">
+                        <enum>QAbstractScrollArea::AdjustToContents</enum>
+                       </property>
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::NoEditTriggers</set>
+                       </property>
+                       <attribute name="horizontalHeaderVisible">
+                        <bool>true</bool>
+                       </attribute>
+                       <attribute name="horizontalHeaderDefaultSectionSize">
+                        <number>180</number>
+                       </attribute>
+                       <attribute name="verticalHeaderVisible">
+                        <bool>false</bool>
+                       </attribute>
+                       <column>
+                        <property name="text">
+                         <string>Attributes </string>
+                        </property>
+                       </column>
+                       <column>
+                        <property name="text">
+                         <string>Null Count</string>
+                        </property>
+                       </column>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -1821,6 +2032,18 @@ QTabWidget::pane {
             </item>
             <item>
              <widget class="QFrame" name="frame_16">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>395</height>
+               </size>
+              </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
@@ -1828,23 +2051,43 @@ QTabWidget::pane {
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_12">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
-                <widget class="QFrame" name="frame_20">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                <widget class="QWidget" name="frm_null_over_time" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>395</height>
+                  </size>
                  </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_19">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                 <property name="maximumSize">
+                  <size>
+                   <width>111110</width>
+                   <height>111110</height>
+                  </size>
                  </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
                  </property>
                 </widget>
                </item>
@@ -1863,11 +2106,6 @@ QTabWidget::pane {
             <string>Validity</string>
            </attribute>
           </widget>
-          <widget class="QWidget" name="tab_4">
-           <attribute name="title">
-            <string>Accuracy</string>
-           </attribute>
-          </widget>
           <widget class="QWidget" name="tab_5">
            <attribute name="title">
             <string>Consistency</string>
@@ -1880,13 +2118,13 @@ QTabWidget::pane {
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>30</height>
            </size>
           </property>
           <property name="frameShape">
@@ -1903,13 +2141,13 @@ QTabWidget::pane {
             <number>9</number>
            </property>
            <property name="topMargin">
-            <number>9</number>
+            <number>0</number>
            </property>
            <property name="rightMargin">
             <number>9</number>
            </property>
            <property name="bottomMargin">
-            <number>9</number>
+            <number>8</number>
            </property>
            <item>
             <widget class="QPushButton" name="btn_analysis_results_back">
@@ -2057,13 +2295,13 @@ QFrame {
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>40</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>40</height>
            </size>
           </property>
           <property name="frameShape">
