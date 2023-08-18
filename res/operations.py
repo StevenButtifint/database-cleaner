@@ -7,7 +7,9 @@ def get_csv_data(directory):
 
 
 def get_null_count_per_column(dataset):
-    return dataset.isnull().sum()
+    series = dataset.isnull().sum()
+    ordered_series = series.sort_values(ascending=False)
+    return ordered_series
 
 
 def get_null_count_percentage(dataset):
