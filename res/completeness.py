@@ -26,3 +26,8 @@ class Completeness:
     def set_null_over_time(self):
         self.null_over_time = get_null_count_over_time(self.database)
 
+    def calculate_stats(self):
+        self.set_overall_null_percentage()
+        self.set_null_count_per_column()
+        self.set_null_over_time()
+
