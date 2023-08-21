@@ -73,6 +73,11 @@ class Window(QtWidgets.QMainWindow):
         qle_selected_database = self.findChild(QLineEdit, 'qle_selected_database')
         qle_selected_database.setText(self.database_dir)
 
+    def set_output_dir(self):
+        self.output_dir = select_file()
+        qle_selected_output = self.findChild(QLineEdit, 'qle_selected_output')
+        qle_selected_output.setText(self.output_dir)
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     window = Window()
