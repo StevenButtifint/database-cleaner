@@ -31,3 +31,8 @@ class Completeness:
         self.set_null_count_per_column()
         self.set_null_over_time()
 
+    def clear_stats(self):
+        self.overall_null_percentage = None
+        self.null_count_per_column = None
+        self.null_over_time = None
+
