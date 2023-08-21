@@ -86,6 +86,11 @@ class Window(QtWidgets.QMainWindow):
         self.analysis_thread.completed.connect(self.show_completeness_stats)
         self.analysis_thread.start()
 
+    def show_completeness_stats(self):
+        self.update_overall_null_percent(self.analysis.completeness_stats.overall_null_percentage)
+        self.update_null_count_columns_table(self.analysis.completeness_stats.null_count_per_column)
+        self.update_null_over_time(self.analysis.completeness_stats.null_over_time)
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     window = Window()
