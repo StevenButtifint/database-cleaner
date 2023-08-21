@@ -78,6 +78,14 @@ class Window(QtWidgets.QMainWindow):
         qle_selected_output = self.findChild(QLineEdit, 'qle_selected_output')
         qle_selected_output.setText(self.output_dir)
 
+    def start_database_analysis(self):
+        self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
+        database = get_csv_data(self.database_dir)
+        self.analysis = Analysis(database)
+        self.analysis_thread = OperationThread(self.analysis, self.analysis.calculate_completeness_stats)
+        self.analysis_thread.completed.connect(self.show_completeness_stats)
+        self.analysis_thread.start()
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     window = Window()
