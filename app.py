@@ -4,14 +4,15 @@ import sys
 
 from res.operations import *
 from res.constants import *
+from res.analysis import Analysis
 
 
 class Window(QtWidgets.QMainWindow):
     def __init__(self):
         super(Window, self).__init__()
         uic.loadUi(INTERFACE_DIR, self)
-
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
+        self.analysis = Analysis()
         self.database_dir = ""
         self.database_name = ""
         self.output_dir = ""
@@ -81,7 +82,7 @@ class Window(QtWidgets.QMainWindow):
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
         database = get_csv_data(self.database_dir)
-        self.analysis = Analysis(database)
+        self.analysis.set_database(database)
         self.analysis_thread = OperationThread(self.analysis, self.analysis.calculate_completeness_stats)
         self.analysis_thread.completed.connect(self.show_completeness_stats)
         self.analysis_thread.start()
