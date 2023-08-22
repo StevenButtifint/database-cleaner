@@ -16,7 +16,6 @@ class Window(QtWidgets.QMainWindow):
         self.database_dir = ""
         self.database_name = ""
         self.output_dir = ""
-
         self.setup()
         self.show()
 
@@ -46,11 +45,14 @@ class Window(QtWidgets.QMainWindow):
         btn_cleaning_page.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'cleaning_page')))
 
     def _setup_analysis_page(self):
-        analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
-        analysis_page_stack.setCurrentWidget(self.findChild(QWidget, 'completeness'))
+        self.reset_analysis_page()
 
         btn_analysis_results_back = self.findChild(QPushButton, 'btn_analysis_results_back')
         btn_analysis_results_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
+
+    def reset_analysis_page(self):
+        analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
+        analysis_page_stack.setCurrentWidget(self.findChild(QWidget, 'completeness'))
 
     def _setup_cleaning_page(self):
         btn_cleaning_back = self.findChild(QPushButton, 'btn_cleaning_back')
@@ -81,6 +83,7 @@ class Window(QtWidgets.QMainWindow):
 
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
+        self.reset_analysis_page()
         database = get_csv_data(self.database_dir)
         self.analysis.set_database(database)
         self.analysis_thread = OperationThread(self.analysis, self.analysis.calculate_completeness_stats)
