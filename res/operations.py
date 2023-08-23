@@ -6,6 +6,10 @@ def get_csv_data(directory):
     return file_data
 
 
+def get_csv_column_names(database):
+    return list(database.columns)
+
+
 def get_null_count_per_column(dataset):
     series = dataset.isnull().sum()
     ordered_series = series.sort_values(ascending=False)
