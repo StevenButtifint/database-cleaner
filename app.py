@@ -24,6 +24,7 @@ class Window(QtWidgets.QMainWindow):
         self._setup_home_page()
         self._setup_tools_page()
         self._setup_analysis_page()
+        self._setup_analysis_results_page()
         self._setup_cleaning_page()
 
     def _setup_home_page(self):
@@ -46,9 +47,12 @@ class Window(QtWidgets.QMainWindow):
 
     def _setup_analysis_page(self):
         self.reset_analysis_page()
-
         btn_analysis_results_back = self.findChild(QPushButton, 'btn_analysis_results_back')
         btn_analysis_results_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
+
+    def _setup_analysis_results_page(self):
+        combo_data_types = self.findChild(QComboBox, 'combo_data_types')
+        combo_data_types.currentIndexChanged.connect(self.change_consistency_data_type)
 
     def reset_analysis_page(self):
         analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
