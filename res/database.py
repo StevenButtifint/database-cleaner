@@ -9,6 +9,13 @@ class Database:
         self.current_directory = None
         self.output_directory = None
 
+    def select_database(self):
+        database_directory = select_csv()
+        if len(database_directory) > 0:
+            self.set_current_directory(database_directory)
+            self.set_name(database_directory)
+            self.set_table(database_directory)
+            self.set_attributes()
 
     def set_current_directory(self, directory):
         self.current_directory = directory
