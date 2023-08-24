@@ -5,6 +5,7 @@ import sys
 from res.operations import *
 from res.constants import *
 from res.analysis import Analysis
+from res.database import Database
 
 
 class Window(QtWidgets.QMainWindow):
@@ -12,10 +13,8 @@ class Window(QtWidgets.QMainWindow):
         super(Window, self).__init__()
         uic.loadUi(INTERFACE_DIR, self)
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
-        self.analysis = Analysis()
-        self.database_dir = ""
-        self.database_name = ""
-        self.output_dir = ""
+        self.database = Database()
+        self.analysis = None
         self.setup()
         self.show()
 
@@ -68,28 +67,19 @@ class Window(QtWidgets.QMainWindow):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
 
     def select_database(self):
-        self.set_database_dir()
-        self.set_database_name()
-
-    def set_database_name(self):
-        database_name = self.database_dir.split("/")[-1]
-        self.database_name = database_name
-
-    def set_database_dir(self):
-        self.database_dir = select_csv()
+        self.database.select_database()
         qle_selected_database = self.findChild(QLineEdit, 'qle_selected_database')
-        qle_selected_database.setText(self.database_dir)
+        qle_selected_database.setText(self.database.get_current_directory())
 
     def set_output_dir(self):
-        self.output_dir = select_file()
+        self.database.set_output_directory()
         qle_selected_output = self.findChild(QLineEdit, 'qle_selected_output')
-        qle_selected_output.setText(self.output_dir)
+        qle_selected_output.setText(self.database.get_output_directory())
 
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
         self.reset_analysis_page()
-        database = get_csv_data(self.database_dir)
-        self.analysis.set_database(database)
+        self.analysis = Analysis(self.database)
         self.analysis_thread = OperationThread(self.analysis, self.analysis.calculate_completeness_stats)
         self.analysis_thread.completed.connect(self.show_completeness_stats)
         self.analysis_thread.start()
