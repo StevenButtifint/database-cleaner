@@ -25,3 +25,15 @@ class Database:
     def set_output_directory(self):
         self.output_directory = select_file()
 
+    def get_table(self):
+        return self.table
+
+    def get_attributes(self):
+        return self.attributes
+
+    def get_current_directory(self):
+        return self.current_directory
+
+    def get_output_directory(self):
+        return self.output_directory
+
