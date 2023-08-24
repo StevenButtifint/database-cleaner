@@ -37,3 +37,5 @@ class Database:
     def get_output_directory(self):
         return self.output_directory
 
+    def total_record_count(self):
+        return get_database_record_count(self.table)
