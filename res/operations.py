@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 def get_csv_data(directory):
@@ -34,6 +35,22 @@ def get_null_count_over_time(dataset):
         tenth_sums.append(tenth_sum)
         current_position = end_position
     return tenth_sums
+
+
+def count_numeric_outliers(database_column, minimum, maximum):
+    outliers = 0
+    try:
+        float_min = float(minimum)
+        float_max = float(maximum)
+        for value in database_column:
+            try:
+                if (value > float_max) | (value < float_min):
+                    outliers += 1
+            except:
+                pass
+    except:
+        pass
+    return outliers
 
 
 def get_database_record_count(database):
