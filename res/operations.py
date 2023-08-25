@@ -36,3 +36,7 @@ def get_null_count_over_time(dataset):
     return tenth_sums
 
 
+def get_database_record_count(database):
+    return database.shape[1]
+
+

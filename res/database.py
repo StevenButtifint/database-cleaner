@@ -1,4 +1,4 @@
-from res.operations import select_csv, get_csv_data, get_csv_column_names
+from res.operations import select_csv, get_csv_data, get_csv_column_names, get_database_record_count
 
 
 class Database:
