@@ -2283,7 +2283,7 @@ color: #dddddd;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QStackedWidget" name="stackedWidget">
+                <widget class="QStackedWidget" name="consistency_stacked_widget">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -2327,7 +2327,18 @@ color: #dddddd;</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="numeric_min"/>
+                    <widget class="QLineEdit" name="numeric_min">
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei</family>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">height: 20;
+color: #dddddd;</string>
+                     </property>
+                    </widget>
                    </item>
                    <item>
                     <widget class="QLabel" name="label_11">
@@ -2355,7 +2366,18 @@ color: #dddddd;</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="numeric_max"/>
+                    <widget class="QLineEdit" name="numeric_max">
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei</family>
+                       <pointsize>12</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">height: 20;
+color: #dddddd;</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -2363,7 +2385,7 @@ color: #dddddd;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="btn_cleaning_page_2">
+                <widget class="QPushButton" name="btn_consistency_calculate">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -2438,7 +2460,7 @@ QPushButton:hover {
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_19">
                <property name="spacing">
-                <number>25</number>
+                <number>15</number>
                </property>
                <property name="topMargin">
                 <number>0</number>
@@ -2466,7 +2488,7 @@ QPushButton:hover {
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_6">
+                <widget class="QLabel" name="invalid_record_count">
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
@@ -2509,7 +2531,7 @@ QPushButton:hover {
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_20">
                <property name="spacing">
-                <number>25</number>
+                <number>15</number>
                </property>
                <property name="topMargin">
                 <number>0</number>
@@ -2537,7 +2559,7 @@ QPushButton:hover {
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_9">
+                <widget class="QLabel" name="invalid_record_percentage">
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
