@@ -75,3 +75,10 @@ def select_file():
     return path
 
 
+def select_csv():
+    file_dialog = QFileDialog()
+    file_dialog.setFileMode(QFileDialog.ExistingFiles)
+    file_dialog.setNameFilter("CSV files (*.csv)")
+    if file_dialog.exec_():
+        return file_dialog.selectedFiles()[0]
+
