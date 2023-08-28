@@ -57,3 +57,16 @@ def get_database_record_count(database):
     return database.shape[1]
 
 
+def calculate_tenth_sums(data):
+    total_count = len(data)
+    interval_size = total_count // 10
+    tenth_sums = []
+    current_position = 0
+    for _ in range(10):
+        end_position = current_position + interval_size
+        tenth_sum = sum(data[current_position:end_position])
+        tenth_sums.append(tenth_sum)
+        current_position = end_position
+    return tenth_sums
+
+
