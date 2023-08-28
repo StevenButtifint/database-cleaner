@@ -18,13 +18,13 @@ class Completeness:
         self.database = database
 
     def set_overall_null_percentage(self):
-        self.overall_null_percentage = get_null_count_percentage(self.database)
+        self.overall_null_percentage = get_null_count_percentage(self.database.get_table())
 
     def set_null_count_per_column(self):
-        self.null_count_per_column = get_null_count_per_column(self.database)
+        self.null_count_per_column = get_null_count_per_column(self.database.get_table())
 
     def set_null_over_time(self):
-        self.null_over_time = get_null_count_over_time(self.database)
+        self.null_over_time = get_null_count_over_time(self.database.get_table())
 
     def calculate_stats(self):
         self.set_overall_null_percentage()
@@ -35,4 +35,3 @@ class Completeness:
         self.overall_null_percentage = None
         self.null_count_per_column = None
         self.null_over_time = None
-
