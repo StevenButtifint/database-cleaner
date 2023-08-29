@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import datetime
 
 
 def get_csv_data(directory):
@@ -45,6 +46,23 @@ def count_numeric_outliers(database_column, minimum, maximum):
         for value in database_column:
             try:
                 if (value > float_max) | (value < float_min):
+                    outliers += 1
+            except:
+                pass
+    except:
+        pass
+    return outliers
+
+
+def count_date_outliers(database_column, minimum_date, maximum_date):
+    outliers = 0
+    try:
+        date_min = datetime.strptime(minimum_date, "%d/%m/%Y")
+        date_max = datetime.strptime(maximum_date, "%d/%m/%Y")
+        for date in database_column:
+            try:
+                date = datetime.strptime(date, "%d/%m/%Y")
+                if (date > date_max) | (date < date_min):
                     outliers += 1
             except:
                 pass
