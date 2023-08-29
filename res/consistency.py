@@ -20,3 +20,7 @@ class Consistency:
     def set_numeric_invalid_record_count(self, column_name, minimum, maximum):
         self.invalid_record_count = count_numeric_outliers(self.database.table[column_name], minimum, maximum)
 
+    def set_invalid_record_percentage(self):
+        database_record_count = self.database.total_record_count()
+        self.invalid_record_percentage = round((self.invalid_record_count / database_record_count)*100, 2)
+
