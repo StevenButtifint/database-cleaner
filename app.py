@@ -52,6 +52,23 @@ class Window(QtWidgets.QMainWindow):
     def _setup_analysis_results_page(self):
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
         combo_data_types.currentIndexChanged.connect(self.change_consistency_data_type)
+        btn_consistency_calculate = self.findChild(QPushButton, 'btn_consistency_calculate')
+        btn_consistency_calculate.clicked.connect(lambda: self.process_consistency_analysis())
+
+    def process_consistency_analysis(self):
+        combo_attribute_list = self.findChild(QComboBox, 'combo_attribute_list')
+        combo_data_types = self.findChild(QComboBox, 'combo_data_types')
+        database_attribute = combo_attribute_list.currentText()
+        selected_data_type_index = combo_data_types.currentIndex()
+        if selected_data_type_index == 0:
+            numeric_min_value = self.findChild(QLineEdit, 'numeric_min').text()
+            numeric_max_value = self.findChild(QLineEdit, 'numeric_max').text()
+            self.analysis.consistency.calculate_numeric_invalid_records(database_attribute, numeric_min_value, numeric_max_value)
+        invalid_record_count = self.findChild(QLabel, 'invalid_record_count')
+        invalid_record_count.setText(str(self.analysis.consistency.get_invalid_record_count()))
+        invalid_record_percentage = self.findChild(QLabel, 'invalid_record_percentage')
+        invalid_record_percentage.setText(self.analysis.consistency.get_invalid_record_percentage_string())
+
 
     def reset_analysis_page(self):
         analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
