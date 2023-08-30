@@ -31,3 +31,6 @@ class Consistency:
         self.set_numeric_invalid_record_count(column_name, minimum, maximum)
         self.set_invalid_record_percentage()
 
+    def calculate_date_invalid_records(self, column_name, minimum, maximum):
+        self.set_date_invalid_record_count(column_name, minimum, maximum)
+        self.set_invalid_record_percentage()
