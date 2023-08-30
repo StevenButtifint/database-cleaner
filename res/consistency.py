@@ -27,3 +27,7 @@ class Consistency:
     def set_date_invalid_record_count(self, column_name, minimum, maximum):
         self.invalid_record_count = count_date_outliers(self.database.table[column_name], minimum, maximum)
 
+    def calculate_numeric_invalid_records(self, column_name, minimum, maximum):
+        self.set_numeric_invalid_record_count(column_name, minimum, maximum)
+        self.set_invalid_record_percentage()
+
