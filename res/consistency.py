@@ -24,3 +24,6 @@ class Consistency:
         database_record_count = self.database.total_record_count()
         self.invalid_record_percentage = round((self.invalid_record_count / database_record_count)*100, 2)
 
+    def set_date_invalid_record_count(self, column_name, minimum, maximum):
+        self.invalid_record_count = count_date_outliers(self.database.table[column_name], minimum, maximum)
+
