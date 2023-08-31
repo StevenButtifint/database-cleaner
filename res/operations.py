@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime
+import re
 
 
 def get_csv_data(directory):
@@ -99,4 +100,14 @@ def select_csv():
     file_dialog.setNameFilter("CSV files (*.csv)")
     if file_dialog.exec_():
         return file_dialog.selectedFiles()[0]
+
+
+def count_invalid_entry_format(values, expected_format):
+    invalid_count = 0
+    regex_format = convert_format_to_regex(expected_format)
+    for value in values:
+        if not re.match(regex_format, value):
+            invalid_count += 1
+    return invalid_count
+
 
