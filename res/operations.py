@@ -111,3 +111,19 @@ def count_invalid_entry_format(values, expected_format):
     return invalid_count
 
 
+def convert_format_to_regex(entered_format):
+    regex_pattern = ""
+    for char in entered_format:
+        if char == 'L':
+            regex_pattern += r'[A-Za-z]'
+        elif char == 'N':
+            regex_pattern += r'\d'
+        elif char == ' ':
+            regex_pattern += r'\s'
+        elif char == '?':
+            regex_pattern += r'\?'
+        elif char == '*':
+            regex_pattern += r'.*'
+        else:
+            pass
+    return regex_pattern
