@@ -53,6 +53,8 @@ class Window(QtWidgets.QMainWindow):
         btn_analysis_results_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
 
     def _setup_analysis_results_page(self):
+        btn_validity_calculate = self.findChild(QPushButton, 'btn_validity_calculate')
+        btn_validity_calculate.clicked.connect(lambda: self.process_validity_analysis())
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
         combo_data_types.currentIndexChanged.connect(self.change_consistency_data_type)
         btn_consistency_calculate = self.findChild(QPushButton, 'btn_consistency_calculate')
@@ -71,6 +73,14 @@ class Window(QtWidgets.QMainWindow):
         invalid_record_count.setText(str(self.analysis.consistency.get_invalid_record_count()))
         invalid_record_percentage = self.findChild(QLabel, 'invalid_record_percentage')
         invalid_record_percentage.setText(self.analysis.consistency.get_invalid_record_percentage_string())
+
+    def process_validity_analysis(self):
+        database_attribute = self.findChild(QComboBox, 'validity_attribute_list').currentText()
+        validity_format_entry = self.findChild(QLineEdit, 'validity_format_entry').text()
+        self.validity = Validity(self.database.table[database_attribute])
+        self.validity_thread = OperationThread(self.validity, lambda: self.validity.calculate_validity_stats(validity_format_entry))
+        self.validity_thread.completed.connect(self.show_validity_stats)
+        self.validity_thread.start()
 
 
     def reset_analysis_page(self):
