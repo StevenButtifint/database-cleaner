@@ -5,6 +5,7 @@ import sys
 from res.operations import *
 from res.constants import *
 from res.analysis import Analysis
+from res.threads import OperationThread
 from res.database import Database
 
 
@@ -15,6 +16,8 @@ class Window(QtWidgets.QMainWindow):
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
         self.database = Database()
         self.analysis = None
+        self.validity_thread = None
+        self.analysis_thread = None
         self.setup()
         self.show()
 
