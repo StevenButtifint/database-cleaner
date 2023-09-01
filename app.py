@@ -105,7 +105,7 @@ class Window(QtWidgets.QMainWindow):
 
     def switch_operations_page(self):
         lbl_selected_database = self.findChild(QLabel, 'lbl_selected_database')
-        lbl_selected_database.setText(str(self.database_name))
+        lbl_selected_database.setText(str(self.database.name))
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
 
     def select_database(self):
@@ -130,6 +130,16 @@ class Window(QtWidgets.QMainWindow):
         self.update_overall_null_percent(self.analysis.completeness_stats.overall_null_percentage)
         self.update_null_count_columns_table(self.analysis.completeness_stats.null_count_per_column)
         self.update_null_over_time(self.analysis.completeness_stats.null_over_time)
+        self.reset_consistency_page(self.database.get_attributes())
+        self.reset_validity_page(self.database.get_attributes())
+
+    def reset_consistency_page(self, column_names):
+        self.refresh_combo_attribute_list('combo_attribute_list', column_names)
+        self.reset_consistency_data_types()
+
+    def reset_validity_page(self, column_names):
+        self.refresh_combo_attribute_list('validity_attribute_list', column_names)
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
