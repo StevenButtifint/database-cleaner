@@ -7,6 +7,7 @@ from res.constants import *
 from res.analysis import Analysis
 from res.threads import OperationThread
 from res.database import Database
+from res.validity import Validity
 
 
 class Window(QtWidgets.QMainWindow):
@@ -16,6 +17,7 @@ class Window(QtWidgets.QMainWindow):
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
         self.database = Database()
         self.analysis = None
+        self.validity = None
         self.validity_thread = None
         self.analysis_thread = None
         self.setup()
@@ -81,6 +83,12 @@ class Window(QtWidgets.QMainWindow):
         self.validity_thread = OperationThread(self.validity, lambda: self.validity.calculate_validity_stats(validity_format_entry))
         self.validity_thread.completed.connect(self.show_validity_stats)
         self.validity_thread.start()
+
+    def show_validity_stats(self):
+        invalid_count_validity = self.findChild(QLabel, 'invalid_count_validity')
+        invalid_percentage_validity = self.findChild(QLabel, 'invalid_percentage_validity')
+        invalid_count_validity.setText(str(self.validity.get_invalid_count()))
+        invalid_percentage_validity.setText(self.validity.get_invalid_percentage_string())
 
 
     def reset_analysis_page(self):
