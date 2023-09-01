@@ -94,6 +94,11 @@ class Window(QtWidgets.QMainWindow):
         invalid_count_validity.setText(str(self.validity.get_invalid_count()))
         invalid_percentage_validity.setText(self.validity.get_invalid_percentage_string())
 
+    def change_consistency_data_type(self):
+        combo_data_types = self.findChild(QComboBox, 'combo_data_types')
+        combo_data_types.currentIndex()
+        consistency_stacked_widget = self.findChild(QStackedWidget, 'consistency_stacked_widget')
+        consistency_stacked_widget.setCurrentIndex(combo_data_types.currentIndex())
 
     def reset_analysis_page(self):
         analysis_page_stack = self.findChild(QTabWidget, 'analysis_page_stack')
