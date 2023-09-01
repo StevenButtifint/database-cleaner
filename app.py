@@ -71,6 +71,10 @@ class Window(QtWidgets.QMainWindow):
             numeric_min_value = self.findChild(QLineEdit, 'numeric_min').text()
             numeric_max_value = self.findChild(QLineEdit, 'numeric_max').text()
             self.analysis.consistency.calculate_numeric_invalid_records(database_attribute, numeric_min_value, numeric_max_value)
+        elif selected_data_type_index == 1:
+            date_min_value = self.findChild(QLineEdit, 'date_min').text()
+            date_max_value = self.findChild(QLineEdit, 'date_max').text()
+            self.analysis.consistency.calculate_date_invalid_records(database_attribute, date_min_value, date_max_value)
         invalid_record_count = self.findChild(QLabel, 'invalid_record_count')
         invalid_record_count.setText(str(self.analysis.consistency.get_invalid_record_count()))
         invalid_record_percentage = self.findChild(QLabel, 'invalid_record_percentage')
