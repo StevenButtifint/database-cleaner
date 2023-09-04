@@ -142,6 +142,14 @@ class Window(QtWidgets.QMainWindow):
         lbl_overall_null_percent = self.findChild(QLabel, 'lbl_overall_null_percent')
         lbl_overall_null_percent.setText("Overall Null Percentage: "+str(percent_value)+"%")
 
+    def update_null_count_columns_table(self, nulls_per_column):
+        tbl_null_per_column = self.findChild(QTableWidget, 'tbl_null_per_column')
+        tbl_null_per_column.setRowCount(0)
+        for attribute in range(len(nulls_per_column)):
+            tbl_null_per_column.insertRow(attribute)
+            tbl_null_per_column.setItem(attribute, 0, QTableWidgetItem(str(nulls_per_column.index[attribute])))
+            tbl_null_per_column.setItem(attribute, 1, QTableWidgetItem(str(nulls_per_column[attribute])))
+
     def reset_consistency_page(self, column_names):
         self.refresh_combo_attribute_list('combo_attribute_list', column_names)
         self.reset_consistency_data_types()
