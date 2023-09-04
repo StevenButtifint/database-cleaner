@@ -157,6 +157,11 @@ class Window(QtWidgets.QMainWindow):
     def reset_validity_page(self, column_names):
         self.refresh_combo_attribute_list('validity_attribute_list', column_names)
 
+    def refresh_combo_attribute_list(self, combo_box, column_names):
+        combo_attribute_list = self.findChild(QComboBox, combo_box)
+        combo_attribute_list.clear()
+        combo_attribute_list.addItems(column_names)
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
