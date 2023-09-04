@@ -162,6 +162,12 @@ class Window(QtWidgets.QMainWindow):
         combo_attribute_list.clear()
         combo_attribute_list.addItems(column_names)
 
+    def reset_consistency_data_types(self):
+        combo_data_types = self.findChild(QComboBox, 'combo_data_types')
+        combo_data_types.setCurrentIndex(0)
+        consistency_stacked_widget = self.findChild(QStackedWidget, 'consistency_stacked_widget')
+        consistency_stacked_widget.setCurrentIndex(0)
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
