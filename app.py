@@ -138,6 +138,10 @@ class Window(QtWidgets.QMainWindow):
         self.reset_consistency_page(self.database.get_attributes())
         self.reset_validity_page(self.database.get_attributes())
 
+    def update_overall_null_percent(self, percent_value):
+        lbl_overall_null_percent = self.findChild(QLabel, 'lbl_overall_null_percent')
+        lbl_overall_null_percent.setText("Overall Null Percentage: "+str(percent_value)+"%")
+
     def reset_consistency_page(self, column_names):
         self.refresh_combo_attribute_list('combo_attribute_list', column_names)
         self.reset_consistency_data_types()
