@@ -1792,7 +1792,7 @@ QTabWidget::pane {
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="completeness">
            <attribute name="title">
@@ -2103,6 +2103,229 @@ QTabWidget::pane {
            <attribute name="title">
             <string>Uniformity</string>
            </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_26">
+            <item>
+             <widget class="QFrame" name="frame_56">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_35">
+               <item>
+                <spacer name="horizontalSpacer_33">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_24">
+                 <property name="minimumSize">
+                  <size>
+                   <width>500</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>500</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Microsoft YaHei</family>
+                   <pointsize>16</pointsize>
+                   <underline>false</underline>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#DDDDDD;</string>
+                 </property>
+                 <property name="text">
+                  <string>Check consistency of entry format and structure.</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_19">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>222</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_51">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_32">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="maximumSize">
+                  <size>
+                   <width>300</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Microsoft YaHei</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#DDDDDD;</string>
+                 </property>
+                 <property name="text">
+                  <string>Database Attribute:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="uniformity_attribute_list">
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Microsoft YaHei</family>
+                   <pointsize>14</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">height: 30;
+color: #dddddd;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_uniformity_calculate">
+                 <property name="minimumSize">
+                  <size>
+                   <width>160</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>160</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Microsoft YaHei</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QPushButton {
+	background-color: rgba(206, 206, 206, 180);
+	border-radius: 20px;
+	color: rgb(218, 218, 218);
+}
+QPushButton:hover {
+	background-color: rgba(206, 206, 206, 240);
+	border-radius: 20px;
+	color: rgb(255, 255,255);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Process</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_17">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_52">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="tab_3">
            <attribute name="title">
@@ -2113,7 +2336,7 @@ QTabWidget::pane {
              <number>0</number>
             </property>
             <property name="leftMargin">
-             <number>0</number>
+             <number>10</number>
             </property>
             <property name="topMargin">
              <number>0</number>
@@ -2129,13 +2352,13 @@ QTabWidget::pane {
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>60</height>
+                <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>60</height>
+                <height>30</height>
                </size>
               </property>
               <property name="frameShape">
@@ -2161,78 +2384,7 @@ QTabWidget::pane {
                 <number>5</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_15">
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>60</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>60</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>18</pointsize>
-                   <underline>true</underline>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:#DDDDDD;</string>
-                 </property>
-                 <property name="text">
-                  <string>Define the expected format for entries to follow</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_43">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_21">
-               <property name="spacing">
-                <number>10</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <spacer name="horizontalSpacer_12">
+                <spacer name="horizontalSpacer_31">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
@@ -2245,58 +2397,39 @@ QTabWidget::pane {
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="label_6">
+                <widget class="QLabel" name="label_15">
+                 <property name="minimumSize">
+                  <size>
+                   <width>500</width>
+                   <height>20</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
-                   <width>300</width>
-                   <height>16777215</height>
+                   <width>500</width>
+                   <height>60</height>
                   </size>
                  </property>
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
                    <pointsize>16</pointsize>
+                   <underline>false</underline>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>Database Attribute:</string>
+                  <string>Check entries follow expected format provided.</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="combo_attribute_list_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>200</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>14</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">height: 30;
-color: #dddddd;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_14">
+                <spacer name="horizontalSpacer_18">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
@@ -2312,24 +2445,18 @@ color: #dddddd;</string>
              </widget>
             </item>
             <item>
-             <widget class="QFrame" name="frame_48">
+             <widget class="QFrame" name="frame_49">
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>50</height>
+                <height>230</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>50</height>
+                <height>230</height>
                </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Microsoft YaHei</family>
-                <pointsize>6</pointsize>
-               </font>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -2354,168 +2481,538 @@ color: #dddddd;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_16">
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>0</height>
-                  </size>
+                <widget class="QFrame" name="frame_53">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>12</pointsize>
-                  </font>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:#DDDDDD;</string>
-                 </property>
-                 <property name="text">
-                  <string>Syntax:  L : Letter,  N : Number, &quot; &quot; : Space, ? : Symbol, * : Varying Number of Type</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QFrame" name="frame_43">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_21">
+                     <property name="spacing">
+                      <number>10</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_6">
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>16</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color:#DDDDDD;</string>
+                       </property>
+                       <property name="text">
+                        <string>Database Attribute:</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="validity_attribute_list">
+                       <property name="minimumSize">
+                        <size>
+                         <width>250</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>250</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">height: 30;
+color: #dddddd;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_14">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_47">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_30">
+                     <property name="spacing">
+                      <number>15</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_14">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>900</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>16</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color:#DDDDDD;</string>
+                       </property>
+                       <property name="text">
+                        <string>Entry Format:</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="validity_format_entry">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>300</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">height: 20;
+color: #dddddd;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="placeholderText">
+                        <string>e.g. LL?L*  for Dr.Smith, Dr.Hampton</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_16">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>800</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_48">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_33">
+                     <item>
+                      <spacer name="horizontalSpacer_12">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_validity_calculate">
+                       <property name="minimumSize">
+                        <size>
+                         <width>150</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>150</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Microsoft YaHei</family>
+                         <pointsize>16</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">
+QPushButton {
+	background-color: rgba(206, 206, 206, 180);
+	border-radius: 20px;
+	color: rgb(218, 218, 218);
+}
+QPushButton:hover {
+	background-color: rgba(206, 206, 206, 240);
+	border-radius: 20px;
+	color: rgb(255, 255,255);
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>Calculate</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_15">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
                 </widget>
                </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_47">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_30">
-               <property name="spacing">
-                <number>15</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
                <item>
-                <spacer name="horizontalSpacer_15">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_14">
+                <widget class="QFrame" name="frame_54">
                  <property name="minimumSize">
                   <size>
-                   <width>200</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>16</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:#DDDDDD;</string>
-                 </property>
-                 <property name="text">
-                  <string>Entry Format:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="date_max_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>300</width>
+                   <width>400</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>300</width>
+                   <width>400</width>
                    <height>16777215</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Microsoft YaHei</family>
-                   <pointsize>12</pointsize>
-                  </font>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">height: 20;
-color: #dddddd;</string>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
                  </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="placeholderText">
-                  <string>e.g. LL?L*  for Dr.Smith, Dr.Hampton</string>
-                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_28">
+                  <property name="leftMargin">
+                   <number>50</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_16">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>16</pointsize>
+                      <underline>true</underline>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>Entry Syntax</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_19">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>L : Letter</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_20">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>N : Number</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_22">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>? : Symbol</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_21">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>&quot; &quot; : Space</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_23">
+                    <property name="minimumSize">
+                     <size>
+                      <width>200</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>* : Varying Amount</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_16">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
             </item>
             <item>
-             <widget class="QFrame" name="frame_49">
+             <widget class="QFrame" name="frame_50">
               <property name="minimumSize">
                <size>
-                <width>0</width>
-                <height>60</height>
+                <width>40</width>
+                <height>40</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>60</height>
+                <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -2540,40 +3037,28 @@ color: #dddddd;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QPushButton" name="btn_consistency_calculate_2">
+                <widget class="QLabel" name="label_25">
                  <property name="minimumSize">
                   <size>
-                   <width>0</width>
-                   <height>35</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>500</width>
-                   <height>35</height>
+                   <width>200</width>
+                   <height>30</height>
                   </size>
                  </property>
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
-                   <pointsize>16</pointsize>
+                   <pointsize>18</pointsize>
+                   <underline>true</underline>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">
-QPushButton {
-	background-color: rgba(206, 206, 206, 180);
-	border-radius: 20px;
-	color: rgb(218, 218, 218);
-}
-QPushButton:hover {
-	background-color: rgba(206, 206, 206, 240);
-	border-radius: 20px;
-	color: rgb(255, 255,255);
-}</string>
+                  <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>Calculate</string>
+                  <string>Results</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2581,39 +3066,17 @@ QPushButton:hover {
              </widget>
             </item>
             <item>
-             <widget class="QFrame" name="frame_50">
-              <property name="minimumSize">
-               <size>
-                <width>40</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QFrame" name="frame_45">
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>40</height>
+                <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>40</height>
+                <height>30</height>
                </size>
               </property>
               <property name="frameShape">
@@ -2652,7 +3115,7 @@ QPushButton:hover {
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="invalid_record_count_2">
+                <widget class="QLabel" name="invalid_count_validity">
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
@@ -2663,7 +3126,7 @@ QPushButton:hover {
                   <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>-</string>
+                  <string>0</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2678,13 +3141,13 @@ QPushButton:hover {
               <property name="minimumSize">
                <size>
                 <width>80</width>
-                <height>80</height>
+                <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>80</height>
+                <height>30</height>
                </size>
               </property>
               <property name="frameShape">
@@ -2701,7 +3164,7 @@ QPushButton:hover {
                 <number>0</number>
                </property>
                <property name="bottomMargin">
-                <number>40</number>
+                <number>0</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_9">
@@ -2723,7 +3186,7 @@ QPushButton:hover {
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="invalid_record_percentage_2">
+                <widget class="QLabel" name="invalid_percentage_validity">
                  <property name="font">
                   <font>
                    <family>Microsoft YaHei</family>
@@ -2734,7 +3197,7 @@ QPushButton:hover {
                   <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>-%</string>
+                  <string>0.00%</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2751,6 +3214,21 @@ QPushButton:hover {
             <string>Consistency</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_22">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame_35">
               <property name="minimumSize">
@@ -2773,17 +3251,108 @@ QPushButton:hover {
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_21">
                <property name="leftMargin">
-                <number>60</number>
+                <number>10</number>
                </property>
                <property name="topMargin">
-                <number>20</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
-                <number>60</number>
+                <number>0</number>
                </property>
                <property name="bottomMargin">
                 <number>0</number>
                </property>
+               <item>
+                <widget class="QFrame" name="frame_57">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_36">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <spacer name="horizontalSpacer_32">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_27">
+                    <property name="minimumSize">
+                     <size>
+                      <width>500</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>500</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Microsoft YaHei</family>
+                      <pointsize>16</pointsize>
+                      <underline>false</underline>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:#DDDDDD;</string>
+                    </property>
+                    <property name="text">
+                     <string>Check entries are in a given date or value range.</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_20">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>240</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
                <item>
                 <widget class="QFrame" name="frame_20">
                  <property name="frameShape">
@@ -2797,17 +3366,30 @@ QPushButton:hover {
                    <number>20</number>
                   </property>
                   <property name="leftMargin">
-                   <number>30</number>
+                   <number>0</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
                   </property>
                   <property name="rightMargin">
-                   <number>30</number>
+                   <number>0</number>
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <item>
+                   <spacer name="horizontalSpacer_27">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                   <item>
                    <widget class="QLabel" name="label_2">
                     <property name="font">
@@ -2829,6 +3411,18 @@ QPushButton:hover {
                   </item>
                   <item>
                    <widget class="QComboBox" name="combo_attribute_list">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="font">
                      <font>
                       <family>Microsoft YaHei</family>
@@ -2840,6 +3434,19 @@ QPushButton:hover {
 color: #dddddd;</string>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_21">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -2857,17 +3464,30 @@ color: #dddddd;</string>
                    <number>20</number>
                   </property>
                   <property name="leftMargin">
-                   <number>30</number>
+                   <number>0</number>
                   </property>
                   <property name="topMargin">
                    <number>0</number>
                   </property>
                   <property name="rightMargin">
-                   <number>30</number>
+                   <number>0</number>
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <item>
+                   <spacer name="horizontalSpacer_28">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                   <item>
                    <widget class="QLabel" name="label_4">
                     <property name="font">
@@ -2889,6 +3509,18 @@ color: #dddddd;</string>
                   </item>
                   <item>
                    <widget class="QComboBox" name="combo_data_types">
+                    <property name="minimumSize">
+                     <size>
+                      <width>340</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>340</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <property name="font">
                      <font>
                       <family>Microsoft YaHei</family>
@@ -2911,6 +3543,19 @@ color: #dddddd;</string>
                     </item>
                    </widget>
                   </item>
+                  <item>
+                   <spacer name="horizontalSpacer_22">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -2921,6 +3566,9 @@ color: #dddddd;</string>
                    <width>0</width>
                    <height>80</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
                  </property>
                  <property name="currentIndex">
                   <number>1</number>
@@ -2961,7 +3609,7 @@ color: #dddddd;</string>
                        <number>8</number>
                       </property>
                       <property name="leftMargin">
-                       <number>400</number>
+                       <number>0</number>
                       </property>
                       <property name="topMargin">
                        <number>0</number>
@@ -2972,6 +3620,19 @@ color: #dddddd;</string>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
+                      <item>
+                       <spacer name="horizontalSpacer_29">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
                       <item>
                        <widget class="QLabel" name="label_11">
                         <property name="minimumSize">
@@ -2999,6 +3660,12 @@ color: #dddddd;</string>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="numeric_max">
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>Microsoft YaHei</family>
@@ -3013,6 +3680,19 @@ color: #dddddd;</string>
                          <string>0.0</string>
                         </property>
                        </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_25">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
                       </item>
                      </layout>
                     </widget>
@@ -3036,7 +3716,7 @@ color: #dddddd;</string>
                        <number>8</number>
                       </property>
                       <property name="leftMargin">
-                       <number>400</number>
+                       <number>0</number>
                       </property>
                       <property name="topMargin">
                        <number>0</number>
@@ -3047,6 +3727,19 @@ color: #dddddd;</string>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
+                      <item>
+                       <spacer name="horizontalSpacer_30">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
                       <item>
                        <widget class="QLabel" name="label_10">
                         <property name="minimumSize">
@@ -3074,6 +3767,12 @@ color: #dddddd;</string>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="numeric_min">
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>Microsoft YaHei</family>
@@ -3088,6 +3787,19 @@ color: #dddddd;</string>
                          <string>0.0</string>
                         </property>
                        </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_26">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
                       </item>
                      </layout>
                     </widget>
@@ -3130,17 +3842,30 @@ color: #dddddd;</string>
                        <number>8</number>
                       </property>
                       <property name="leftMargin">
-                       <number>400</number>
+                       <number>0</number>
                       </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
                       <property name="rightMargin">
-                       <number>30</number>
+                       <number>0</number>
                       </property>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
+                      <item>
+                       <spacer name="horizontalSpacer_34">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
                       <item>
                        <widget class="QLabel" name="label_13">
                         <property name="minimumSize">
@@ -3168,6 +3893,12 @@ color: #dddddd;</string>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="date_max">
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>Microsoft YaHei</family>
@@ -3182,6 +3913,19 @@ color: #dddddd;</string>
                          <string>DD/MM/YYYY</string>
                         </property>
                        </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_23">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
                       </item>
                      </layout>
                     </widget>
@@ -3205,17 +3949,30 @@ color: #dddddd;</string>
                        <number>8</number>
                       </property>
                       <property name="leftMargin">
-                       <number>400</number>
+                       <number>0</number>
                       </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
                       <property name="rightMargin">
-                       <number>30</number>
+                       <number>0</number>
                       </property>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
+                      <item>
+                       <spacer name="horizontalSpacer_35">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
                       <item>
                        <widget class="QLabel" name="label_12">
                         <property name="minimumSize">
@@ -3243,6 +4000,12 @@ color: #dddddd;</string>
                       </item>
                       <item>
                        <widget class="QLineEdit" name="date_min">
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>Microsoft YaHei</family>
@@ -3257,6 +4020,19 @@ color: #dddddd;</string>
                          <string>DD/MM/YYYY</string>
                         </property>
                        </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_24">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
                       </item>
                      </layout>
                     </widget>
@@ -3347,6 +4123,59 @@ QPushButton:hover {
              </spacer>
             </item>
             <item>
+             <widget class="QFrame" name="frame_55">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_34">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_26">
+                 <property name="minimumSize">
+                  <size>
+                   <width>200</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Microsoft YaHei</family>
+                   <pointsize>18</pointsize>
+                   <underline>true</underline>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:#DDDDDD;</string>
+                 </property>
+                 <property name="text">
+                  <string>Results</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
              <widget class="QFrame" name="frame_36">
               <property name="minimumSize">
                <size>
@@ -3407,7 +4236,7 @@ QPushButton:hover {
                   <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>-</string>
+                  <string>0</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -3478,7 +4307,7 @@ QPushButton:hover {
                   <string notr="true">color:#DDDDDD;</string>
                  </property>
                  <property name="text">
-                  <string>-%</string>
+                  <string>0.00%</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
