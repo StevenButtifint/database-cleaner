@@ -127,3 +127,7 @@ def convert_format_to_regex(entered_format):
         else:
             pass
     return regex_pattern
+
+
+def count_unique_items(data_series):
+    return len(data_series.unique())
