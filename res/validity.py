@@ -26,3 +26,7 @@ class Validity:
     def get_invalid_percentage_string(self):
         return str(self.get_invalid_percentage())+'%'
 
+    def calculate_validity_stats(self, expected_format):
+        invalid_count = count_invalid_entry_format(self.database_column, expected_format)
+        self.set_invalid_count(invalid_count)
+        self.set_invalid_percentage(invalid_count/self.column_length)
