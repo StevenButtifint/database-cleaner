@@ -8,3 +8,12 @@ class Validity:
         self.invalid_count = 0
         self.invalid_percentage = 0
 
+    def set_database_column(self, database_column):
+        self.database_column = database_column
+
+    def set_invalid_count(self, invalid_count):
+        self.invalid_count = invalid_count
+
+    def set_invalid_percentage(self, invalid_percentage):
+        self.invalid_percentage = round(invalid_percentage, 2)
+
