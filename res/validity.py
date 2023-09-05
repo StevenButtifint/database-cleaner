@@ -17,3 +17,12 @@ class Validity:
     def set_invalid_percentage(self, invalid_percentage):
         self.invalid_percentage = round(invalid_percentage, 2)
 
+    def get_invalid_count(self):
+        return self.invalid_count
+
+    def get_invalid_percentage(self):
+        return self.invalid_percentage
+
+    def get_invalid_percentage_string(self):
+        return str(self.get_invalid_percentage())+'%'
+
