@@ -150,3 +150,20 @@ def create_boxplot_graph(canvas, axis, data):
     canvas.draw()
 
 
+def create_null_over_time_graph(canvas, axis, data):
+    x = np.arange(len(data))
+    axis.bar(x, data, color='white')
+    axis.set_xticks(x)
+    axis.set_xticklabels([str(i+1) for i in range(len(data))])
+    axis.set_xlabel("Time Frames")
+    axis.set_ylabel("Null Total Per Time Frame")
+    axis.set_title("Nulls Over 20 Time Frames")
+    axis.spines['bottom'].set_color('white')
+    axis.spines['left'].set_color('white')
+    axis.spines['top'].set_visible(False)
+    axis.spines['right'].set_visible(False)
+    axis.xaxis.label.set_color('white')
+    axis.yaxis.label.set_color('white')
+    axis.title.set_color('white')
+    axis.tick_params(axis='both', colors='white')
+    canvas.draw()
