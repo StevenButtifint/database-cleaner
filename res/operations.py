@@ -131,3 +131,22 @@ def convert_format_to_regex(entered_format):
 
 def count_unique_items(data_series):
     return len(data_series.unique())
+
+
+def create_boxplot_graph(canvas, axis, data):
+    boxprops = dict(facecolor='grey', edgecolor='white')
+    whiskerprops = dict(color='white')
+    flierprops = dict(color='white')
+    medianprops = dict(color='white')
+    capprops = dict(color='white')
+    axis.boxplot(data, vert=False, patch_artist=True, boxprops=boxprops, whiskerprops=whiskerprops, flierprops=flierprops, medianprops=medianprops, capprops=capprops)
+    axis.set_xlabel('Values', color='white')
+    axis.spines['bottom'].set_color('white')
+    axis.spines['left'].set_color('white')
+    axis.spines['top'].set_visible(False)
+    axis.spines['right'].set_visible(False)
+    axis.tick_params(axis='x', colors='white')
+    axis.tick_params(axis='y', colors='white')
+    canvas.draw()
+
+
