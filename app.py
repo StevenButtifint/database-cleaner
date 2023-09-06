@@ -88,6 +88,18 @@ class Window(QtWidgets.QMainWindow):
         self.validity_thread.completed.connect(self.show_validity_stats)
         self.validity_thread.start()
 
+    def show_uniformity_boxplot(self, database_attribute):
+        central_widget = self.findChild(QWidget, 'uniformity_boxplot')
+        layout = QVBoxLayout(central_widget)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(0)
+        figure, ax = plt.subplots(facecolor='none')
+        figure.patch.set_alpha(0)
+        ax.patch.set_alpha(0)
+        canvas = FigureCanvas(figure)
+        layout.addWidget(canvas)
+        create_boxplot_graph(canvas, ax, database_attribute)
+
     def show_validity_stats(self):
         invalid_count_validity = self.findChild(QLabel, 'invalid_count_validity')
         invalid_percentage_validity = self.findChild(QLabel, 'invalid_percentage_validity')
@@ -135,6 +147,7 @@ class Window(QtWidgets.QMainWindow):
         self.update_overall_null_percent(self.analysis.completeness_stats.overall_null_percentage)
         self.update_null_count_columns_table(self.analysis.completeness_stats.null_count_per_column)
         self.update_null_over_time(self.analysis.completeness_stats.null_over_time)
+        self.reset_uniformity_page(self.database.get_attributes())
         self.reset_consistency_page(self.database.get_attributes())
         self.reset_validity_page(self.database.get_attributes())
 
