@@ -2377,6 +2377,41 @@ QPushButton:hover {
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_39">
+               <item>
+                <widget class="QWidget" name="uniformity_boxplot" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                 </property>
+                 <widget class="QLabel" name="boxplot_notice_lbl">
+                  <property name="geometry">
+                   <rect>
+                    <x>360</x>
+                    <y>60</y>
+                    <width>246</width>
+                    <height>56</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Microsoft YaHei</family>
+                    <pointsize>16</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:#DDDDDD;</string>
+                  </property>
+                  <property name="text">
+                   <string>No Plot Shown,
+Attribute is not Numeric</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
