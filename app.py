@@ -150,6 +150,19 @@ class Window(QtWidgets.QMainWindow):
             tbl_null_per_column.setItem(attribute, 0, QTableWidgetItem(str(nulls_per_column.index[attribute])))
             tbl_null_per_column.setItem(attribute, 1, QTableWidgetItem(str(nulls_per_column[attribute])))
 
+    def update_null_over_time(self, null_over_time_data):
+        central_widget = self.findChild(QWidget, 'frm_null_over_time')
+        layout_t = QVBoxLayout(central_widget)
+        frame = QFrame(self)
+        layout_t.addWidget(frame)
+        figure, axis = plt.subplots()
+        axis.patch.set_alpha(0)
+        figure.patch.set_alpha(0)
+        canvas = FigureCanvas(figure)
+        layout_t = QVBoxLayout(frame)
+        layout_t.addWidget(canvas)
+        create_null_over_time_graph(canvas, axis, null_over_time_data)
+
     def reset_consistency_page(self, column_names):
         self.refresh_combo_attribute_list('combo_attribute_list', column_names)
         self.reset_consistency_data_types()
