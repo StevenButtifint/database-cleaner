@@ -80,6 +80,13 @@ class Window(QtWidgets.QMainWindow):
         invalid_record_percentage = self.findChild(QLabel, 'invalid_record_percentage')
         invalid_record_percentage.setText(self.analysis.consistency.get_invalid_record_percentage_string())
 
+    def process_uniformity_analysis(self):
+        database_attribute = self.findChild(QComboBox, 'uniformity_attribute_list').currentText()
+        self.uniformity = Uniformity(self.database.table[database_attribute])
+        self.uniformity_thread = OperationThread(self.uniformity, lambda: self.uniformity.calculate_uniformity_stats())
+        self.uniformity_thread.completed.connect(self.show_uniformity_stats)
+        self.uniformity_thread.start()
+
     def process_validity_analysis(self):
         database_attribute = self.findChild(QComboBox, 'validity_attribute_list').currentText()
         validity_format_entry = self.findChild(QLineEdit, 'validity_format_entry').text()
