@@ -18,6 +18,8 @@ class Window(QtWidgets.QMainWindow):
         self.database = Database()
         self.analysis = None
         self.validity = None
+        self.uniformity = None
+        self.uniformity_thread = None
         self.validity_thread = None
         self.analysis_thread = None
         self.setup()
@@ -94,6 +96,20 @@ class Window(QtWidgets.QMainWindow):
         self.validity_thread = OperationThread(self.validity, lambda: self.validity.calculate_validity_stats(validity_format_entry))
         self.validity_thread.completed.connect(self.show_validity_stats)
         self.validity_thread.start()
+
+    def show_uniformity_stats(self):
+        unique_percentage_count = self.findChild(QLabel, 'unique_percentage_count')
+        unique_percentage_count.setText(self.uniformity.get_unique_percentage_string())
+        unique_count = self.findChild(QLabel, 'unique_count')
+        unique_count.setText(str(self.uniformity.get_unique_count()))
+        database_attribute = self.findChild(QComboBox, 'uniformity_attribute_list').currentText()
+        database_column = self.database.table[database_attribute]
+        boxplot_notice_lbl = self.findChild(QLabel, 'boxplot_notice_lbl')
+        boxplot_notice_lbl.setText("")
+        try:
+            self.show_uniformity_boxplot(database_column)
+        except:
+            boxplot_notice_lbl.setText("No Plot Shown,\nAttribute is not Numeric")
 
     def show_uniformity_boxplot(self, database_attribute):
         central_widget = self.findChild(QWidget, 'uniformity_boxplot')
