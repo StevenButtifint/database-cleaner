@@ -106,7 +106,10 @@ def count_invalid_entry_format(values, expected_format):
     invalid_count = 0
     regex_format = convert_format_to_regex(expected_format)
     for value in values:
-        if not re.match(regex_format, value):
+        try:
+            if not re.match(regex_format, value):
+                invalid_count += 1
+        except:
             invalid_count += 1
     return invalid_count
 
