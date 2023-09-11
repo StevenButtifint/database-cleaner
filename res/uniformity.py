@@ -42,3 +42,6 @@ class Uniformity:
         self.set_unique_percentage((unique_items/total_items)*100)
         self.set_unique_count(unique_items)
 
+    def calculate_uniformity_stats(self):
+        self.calculate_unique_stats()
+
