@@ -36,3 +36,9 @@ class Uniformity:
     def get_unique_percentage_string(self):
         return str(self.unique_percentage) + "%"
 
+    def calculate_unique_stats(self):
+        unique_items = count_unique_items(self.get_database_column())
+        total_items = self.get_column_length()
+        self.set_unique_percentage((unique_items/total_items)*100)
+        self.set_unique_count(unique_items)
+
