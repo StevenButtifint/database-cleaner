@@ -144,9 +144,10 @@ class Window(QtWidgets.QMainWindow):
         btn_cleaning_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
 
     def switch_operations_page(self):
-        lbl_selected_database = self.findChild(QLabel, 'lbl_selected_database')
-        lbl_selected_database.setText(str(self.database.name))
-        self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
+        if self.check_database_selected():
+            lbl_selected_database = self.findChild(QLabel, 'lbl_selected_database')
+            lbl_selected_database.setText(str(self.database.name))
+            self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
 
     def check_database_selected(self):
         is_selected = False
