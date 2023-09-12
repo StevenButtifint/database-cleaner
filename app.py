@@ -8,6 +8,7 @@ from res.analysis import Analysis
 from res.threads import OperationThread
 from res.database import Database
 from res.validity import Validity
+from res.uniformity import Uniformity
 
 
 class Window(QtWidgets.QMainWindow):
@@ -57,6 +58,8 @@ class Window(QtWidgets.QMainWindow):
         btn_analysis_results_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
 
     def _setup_analysis_results_page(self):
+        btn_uniformity_calculate = self.findChild(QPushButton, 'btn_uniformity_calculate')
+        btn_uniformity_calculate.clicked.connect(lambda: self.process_uniformity_analysis())
         btn_validity_calculate = self.findChild(QPushButton, 'btn_validity_calculate')
         btn_validity_calculate.clicked.connect(lambda: self.process_validity_analysis())
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
