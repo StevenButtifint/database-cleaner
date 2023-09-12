@@ -148,6 +148,15 @@ class Window(QtWidgets.QMainWindow):
         lbl_selected_database.setText(str(self.database.name))
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page'))
 
+    def check_database_selected(self):
+        is_selected = False
+        if len(self.findChild(QLineEdit, 'qle_selected_database').text()) > 0:
+            self.findChild(QLabel, 'home_notice_lbl').setText("")
+            is_selected = True
+        else:
+            self.findChild(QLabel, 'home_notice_lbl').setText("Please select a database first.")
+        return is_selected
+
     def select_database(self):
         self.database.select_database()
         qle_selected_database = self.findChild(QLineEdit, 'qle_selected_database')
