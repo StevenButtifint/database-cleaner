@@ -73,7 +73,7 @@ def count_date_outliers(database_column, minimum_date, maximum_date):
 
 
 def get_database_record_count(database):
-    return database.shape[1]
+    return database.shape[0]
 
 
 def calculate_tenth_sums(data):
