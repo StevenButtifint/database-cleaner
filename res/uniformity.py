@@ -44,4 +44,3 @@ class Uniformity:
 
     def calculate_uniformity_stats(self):
         self.calculate_unique_stats()
-
