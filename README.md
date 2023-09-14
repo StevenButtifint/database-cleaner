@@ -14,10 +14,21 @@ Perform customizable cleaning operations to produce a cleaned copy of a database
 
 
 ### Analysis Tools
-- Completeness: Identify the null percentage overall, nulls per attribute and nulls over time.
-- Uniformity: Identify the uniqueness of entries and their distribution.
-- Validity: Evaluate the conformity of an attribute to a given entry format.
-- Consistency: Evaluate an attribute to a given data type range.
+- Calculate the amount and percentage of values in an attribute that conform to a specified syntax.
+- Calculate the amount of unique entries in an attribute and show their distribution on a box plot.
+- Calculate the amount and percentage of records where an attribute falls outside a specified range.
+- Calculate the amount of nulls added to the database over time as a bar graph.
+- Calculate the amount of nulls for each database attribute.
+- Calculate an overall null percentage for a database.
+
+
+### Cleaning Tools
+- Remove database records where an attribute falls outside a specified numerical range.
+- Remove database records where an attribute falls outside a specified date range.
+- Remove database records where an attribute does not follow a specified syntax.
+- Remove database attributes based on a defined null threshold.
+- Remove database records that contain null values.
+- Remove duplicate database records.
 
 
 ### What I Learned
