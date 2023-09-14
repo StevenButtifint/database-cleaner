@@ -1,22 +1,17 @@
 # Database Cleaner
- 
+
+---
+
 ### Analysis Demo Video
 <p align="center">
 <img src="https://github.com/stevenbuttifint/database-cleaner/blob/main/demo/analysis_demo.gif?raw=true" width=80% height=100%>
 </p>
 
----
-### Table of Contents
-- [Description](#description)
-- [What I Learned](#what-i-learned)
-
----
 
 ### Description
 This application provides data cleaning and analysis through a user-friendly interface. Get detailed analysis of a selected database in an organised and visual manner.
-Perform customizable cleaning operations to produce a cleaned database. Created using Python and PyQt.
+Perform customizable cleaning operations to produce a cleaned copy of a database. This application has been created using Python and PyQt.
 
----
 
 ### Analysis Tools
 - Completeness: Identify the null percentage overall, nulls per attribute and nulls over time.
@@ -24,7 +19,6 @@ Perform customizable cleaning operations to produce a cleaned database. Created 
 - Validity: Evaluate the conformity of an attribute to a given entry format.
 - Consistency: Evaluate an attribute to a given data type range.
 
----
 
 ### What I Learned
 - Refreshed my data manipulation and analysis skills with the pandas Python library.
