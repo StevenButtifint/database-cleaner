@@ -14,6 +14,9 @@ class Completeness:
     def get_null_count_per_column(self):
         return self.null_count_per_column
 
+    def get_null_over_time(self):
+        return self.null_over_time
+
     def set_database(self, database):
         self.database = database
 
