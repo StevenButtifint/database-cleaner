@@ -179,9 +179,9 @@ class Window(QtWidgets.QMainWindow):
         self.reset_analysis_page()
 
     def show_completeness_stats(self):
-        self.update_overall_null_percent(self.analysis.completeness_stats.overall_null_percentage)
-        self.update_null_count_columns_table(self.analysis.completeness_stats.null_count_per_column)
-        self.update_null_over_time(self.analysis.completeness_stats.null_over_time)
+        self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
+        self.update_null_count_columns_table(self.completeness.get_null_count_per_column())
+        self.update_null_over_time(self.completeness.get_null_over_time())
         self.reset_uniformity_page(self.database.get_attributes())
         self.reset_consistency_page(self.database.get_attributes())
         self.reset_validity_page(self.database.get_attributes())
