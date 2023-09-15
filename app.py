@@ -16,10 +16,12 @@ class Window(QtWidgets.QMainWindow):
         uic.loadUi(INTERFACE_DIR, self)
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
         self.database = Database()
+        self.completeness = None
         self.validity = None
         self.uniformity = None
         self.uniformity_thread = None
         self.validity_thread = None
+        self.completeness_thread = None
         self.setup()
         self.show()
 
@@ -177,6 +179,12 @@ class Window(QtWidgets.QMainWindow):
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
         self.reset_analysis_page()
+        self.completeness = Completeness(self.database)
+        self.set_cleaning_operations()
+        self.completeness_thread = OperationThread(self.completeness, lambda: self.completeness.calculate_stats())
+        self.completeness_thread.completed.connect(self.show_completeness_stats)
+        self.completeness_thread.start()
+
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
