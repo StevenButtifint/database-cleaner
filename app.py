@@ -19,9 +19,11 @@ class Window(QtWidgets.QMainWindow):
         self.completeness = None
         self.validity = None
         self.uniformity = None
+        self.consistency = None
         self.uniformity_thread = None
         self.validity_thread = None
         self.completeness_thread = None
+        self.consistency_thread = None
         self.setup()
         self.show()
 
@@ -71,18 +73,15 @@ class Window(QtWidgets.QMainWindow):
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
         database_attribute = combo_attribute_list.currentText()
         selected_data_type_index = combo_data_types.currentIndex()
+        self.consistency = Consistency(self.database)
         if selected_data_type_index == 0:
             numeric_min_value = self.findChild(QLineEdit, 'numeric_min').text()
             numeric_max_value = self.findChild(QLineEdit, 'numeric_max').text()
-            self.analysis.consistency.calculate_numeric_invalid_records(database_attribute, numeric_min_value, numeric_max_value)
+            self.consistency_thread = OperationThread(self.consistency, lambda: self.consistency.calculate_numeric_invalid_records(database_attribute, numeric_min_value, numeric_max_value))
         elif selected_data_type_index == 1:
             date_min_value = self.findChild(QLineEdit, 'date_min').text()
             date_max_value = self.findChild(QLineEdit, 'date_max').text()
-            self.analysis.consistency.calculate_date_invalid_records(database_attribute, date_min_value, date_max_value)
-        invalid_record_count = self.findChild(QLabel, 'invalid_record_count')
-        invalid_record_count.setText(str(self.analysis.consistency.get_invalid_record_count()))
-        invalid_record_percentage = self.findChild(QLabel, 'invalid_record_percentage')
-        invalid_record_percentage.setText(self.analysis.consistency.get_invalid_record_percentage_string())
+            self.consistency_thread = OperationThread(self.consistency, lambda: self.consistency.calculate_date_invalid_records(database_attribute, date_min_value, date_max_value))
 
     def process_uniformity_analysis(self):
         database_attribute = self.findChild(QComboBox, 'uniformity_attribute_list').currentText()
