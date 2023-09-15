@@ -4,7 +4,6 @@ import sys
 
 from res.operations import *
 from res.constants import *
-from res.analysis import Analysis
 from res.threads import OperationThread
 from res.database import Database
 from res.validity import Validity
@@ -17,12 +16,10 @@ class Window(QtWidgets.QMainWindow):
         uic.loadUi(INTERFACE_DIR, self)
         self.main_page_stack = self.findChild(QStackedWidget, 'main_page_stack')
         self.database = Database()
-        self.analysis = None
         self.validity = None
         self.uniformity = None
         self.uniformity_thread = None
         self.validity_thread = None
-        self.analysis_thread = None
         self.setup()
         self.show()
 
@@ -180,10 +177,6 @@ class Window(QtWidgets.QMainWindow):
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
         self.reset_analysis_page()
-        self.analysis = Analysis(self.database)
-        self.analysis_thread = OperationThread(self.analysis, self.analysis.calculate_completeness_stats)
-        self.analysis_thread.completed.connect(self.show_completeness_stats)
-        self.analysis_thread.start()
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.analysis.completeness_stats.overall_null_percentage)
