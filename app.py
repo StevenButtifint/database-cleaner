@@ -8,6 +8,7 @@ from res.threads import OperationThread
 from res.database import Database
 from res.validity import Validity
 from res.uniformity import Uniformity
+from res.consistency import Consistency
 
 
 class Window(QtWidgets.QMainWindow):
@@ -82,6 +83,8 @@ class Window(QtWidgets.QMainWindow):
             date_min_value = self.findChild(QLineEdit, 'date_min').text()
             date_max_value = self.findChild(QLineEdit, 'date_max').text()
             self.consistency_thread = OperationThread(self.consistency, lambda: self.consistency.calculate_date_invalid_records(database_attribute, date_min_value, date_max_value))
+        self.consistency_thread.completed.connect(self.show_consistency_stats)
+        self.consistency_thread.start()
 
     def process_uniformity_analysis(self):
         database_attribute = self.findChild(QComboBox, 'uniformity_attribute_list').currentText()
