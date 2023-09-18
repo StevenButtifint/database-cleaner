@@ -90,7 +90,7 @@ def calculate_tenth_sums(data):
     return tenth_sums
 
 
-def select_file():
+def select_folder():
     path = QFileDialog.getExistingDirectory(caption='Select a Folder')
     return path
 
