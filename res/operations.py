@@ -26,6 +26,12 @@ def get_null_count_percentage(dataset):
     return round((null_count / cell_count) * 100, 2)
 
 
+def get_column_null_percentage(column_data):
+    cell_count = len(column_data)
+    null_count = column_data.isnull().sum()
+    return round(null_count / cell_count * 100, 2)
+
+
 def get_null_count_over_time(dataset):
     row_nulls_count = dataset.isnull().sum(axis=1).tolist()
     total_count = len(row_nulls_count)
