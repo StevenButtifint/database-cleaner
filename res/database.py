@@ -29,8 +29,8 @@ class Database:
     def set_attributes(self):
         self.attributes = get_csv_column_names(self.table)
 
-    def set_output_directory(self):
-        self.output_directory = select_file()
+    def set_output_directory(self, directory):
+        self.output_directory = directory
 
     def get_table(self):
         return self.table
