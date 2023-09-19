@@ -32,6 +32,9 @@ class Database:
     def set_output_directory(self, directory):
         self.output_directory = directory
 
+    def get_name(self):
+        return self.name
+
     def get_table(self):
         return self.table
 
