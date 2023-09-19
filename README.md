@@ -37,7 +37,10 @@ Perform customizable cleaning operations to produce a cleaned copy of a database
 - How to use spacers in PyQt5 to provide a consistent UI experience.
 - How to define widget-specific CSS using IDs.
 
----
 
+### References
+- Links to the icons used can be found [here](https://github.com/StevenButtifint/database-cleaner/tree/main/res/icons/links.txt).
+
+---
 
 [Back To The Top](#database-cleaner)
