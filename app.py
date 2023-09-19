@@ -1,5 +1,7 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import *
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib import pyplot as plt
 import sys
 
 from res.operations import *
@@ -9,6 +11,7 @@ from res.database import Database
 from res.validity import Validity
 from res.uniformity import Uniformity
 from res.consistency import Consistency
+from res.cleaning import Cleaning
 
 
 class Window(QtWidgets.QMainWindow):
@@ -21,6 +24,7 @@ class Window(QtWidgets.QMainWindow):
         self.validity = None
         self.uniformity = None
         self.consistency = None
+        self.cleaning = None
         self.uniformity_thread = None
         self.validity_thread = None
         self.completeness_thread = None
