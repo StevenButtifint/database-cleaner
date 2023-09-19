@@ -56,7 +56,7 @@ class Window(QtWidgets.QMainWindow):
         btn_analysis_page = self.findChild(QPushButton, 'btn_analysis_page')
         btn_analysis_page.clicked.connect(lambda: self.start_database_analysis())
         btn_cleaning_page = self.findChild(QPushButton, 'btn_cleaning_page')
-        btn_cleaning_page.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'cleaning_page')))
+        btn_cleaning_page.clicked.connect(lambda: self.use_cleaning_page())
 
     def _setup_analysis_page(self):
         self.reset_analysis_page()
@@ -72,6 +72,10 @@ class Window(QtWidgets.QMainWindow):
         combo_data_types.currentIndexChanged.connect(self.change_consistency_data_type)
         btn_consistency_calculate = self.findChild(QPushButton, 'btn_consistency_calculate')
         btn_consistency_calculate.clicked.connect(lambda: self.process_consistency_analysis())
+
+    def use_cleaning_page(self):
+        self.reset_cleaning_page()
+        self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'cleaning_page'))
 
     def process_consistency_analysis(self):
         combo_attribute_list = self.findChild(QComboBox, 'combo_attribute_list')
