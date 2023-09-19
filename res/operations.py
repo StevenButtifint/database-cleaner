@@ -177,3 +177,7 @@ def create_null_over_time_graph(canvas, axis, data):
     axis.title.set_color('white')
     axis.tick_params(axis='both', colors='white')
     canvas.draw()
+
+
+def dataframe_to_csv(dataframe, csv_name):
+    dataframe.to_csv(csv_name+'.csv', index=False)
