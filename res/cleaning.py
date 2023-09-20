@@ -14,3 +14,11 @@ class Cleaning:
         self.remove_numerical_outliers = False
         self.remove_date_outliers = False
         self.remove_invalid_syntax = False
+        self.empty_attribute_threshold = 0
+        self.numerical_outliers_attribute = None
+        self.numerical_range = None
+        self.date_outliers_attribute = None
+        self.date_range = None
+        self.syntax_attribute = None
+        self.syntax_format = None
+
