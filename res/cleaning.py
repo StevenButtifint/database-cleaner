@@ -22,3 +22,51 @@ class Cleaning:
         self.syntax_attribute = None
         self.syntax_format = None
 
+    def set_database(self, database):
+        self.database = database
+
+    def set_clean_database(self, database):
+        self.clean_database = copy.deepcopy(database)
+
+    def set_output_location(self, output_location):
+        self.database.set_output_directory(output_location)
+
+    def set_remove_empty_attributes(self, state):
+        self.remove_empty_attributes = state
+
+    def set_remove_empty_records(self, state):
+        self.remove_empty_records = state
+
+    def set_empty_attribute_threshold(self, value):
+        self.empty_attribute_threshold = value
+
+    def set_remove_duplicate_records(self, state):
+        self.remove_duplicate_records = state
+
+    def set_remove_numerical_outliers(self, state):
+        self.remove_numerical_outliers = state
+
+    def set_numerical_outliers_attribute(self, attribute):
+        self.numerical_outliers_attribute = attribute
+
+    def set_numerical_range(self, minimum, maximum):
+        self.numerical_range = [minimum, maximum]
+
+    def set_remove_date_outliers(self, state):
+        self.remove_date_outliers = state
+
+    def set_date_outliers_attribute(self, attribute):
+        self.date_outliers_attribute = attribute
+
+    def set_date_range(self, minimum, maximum):
+        self.date_range = [minimum, maximum]
+
+    def set_remove_invalid_syntax(self, state):
+        self.remove_invalid_syntax = state
+
+    def set_syntax_attribute(self, attribute):
+        self.syntax_attribute = attribute
+
+    def set_syntax_format(self, syntax):
+        self.syntax_format = syntax
+
