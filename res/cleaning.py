@@ -70,3 +70,51 @@ class Cleaning:
     def set_syntax_format(self, syntax):
         self.syntax_format = syntax
 
+    def get_database(self):
+        return self.database
+
+    def get_output_location(self):
+        return self.database.get_output_directory()
+
+    def get_remove_empty_attributes(self):
+        return self.remove_empty_attributes
+
+    def get_remove_empty_records(self):
+        return self.remove_empty_records
+
+    def get_empty_attribute_threshold(self):
+        return self.empty_attribute_threshold
+
+    def get_remove_duplicate_records(self):
+        return self.remove_duplicate_records
+
+    def get_remove_numerical_outliers(self):
+        return self.remove_numerical_outliers
+
+    def get_numerical_outliers_attribute(self):
+        return self.numerical_outliers_attribute
+
+    def get_numerical_range(self):
+        return self.numerical_range
+
+    def get_remove_date_outliers(self):
+        return self.remove_date_outliers
+
+    def get_date_outliers_attribute(self):
+        return self.date_outliers_attribute
+
+    def get_date_range(self):
+        return self.date_range
+
+    def get_remove_invalid_syntax(self):
+        return self.remove_invalid_syntax
+
+    def get_syntax_attribute(self):
+        return self.syntax_attribute
+
+    def get_syntax_format(self):
+        return self.syntax_format
+
+    def get_clean_database(self):
+        return self.clean_database
+
