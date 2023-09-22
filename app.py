@@ -77,6 +77,15 @@ class Window(QtWidgets.QMainWindow):
         self.reset_cleaning_page()
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'cleaning_page'))
 
+    def reset_cleaning_page(self):
+        self.findChild(QLabel, 'lbl_output_notice').setText("")
+        output_location = self.get_output_location()
+        self.show_output_location(output_location)
+        attributes = self.database.get_attributes()
+        self.refresh_combo_attribute_list('com_numerical_attribute', attributes)
+        self.refresh_combo_attribute_list('com_date_attribute', attributes)
+        self.refresh_combo_attribute_list('com_syntax_attribute', attributes)
+
     def process_consistency_analysis(self):
         combo_attribute_list = self.findChild(QComboBox, 'combo_attribute_list')
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
