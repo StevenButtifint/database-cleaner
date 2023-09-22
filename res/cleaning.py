@@ -118,3 +118,10 @@ class Cleaning:
     def get_clean_database(self):
         return self.clean_database
 
+    def clean_empty_attributes(self):
+        for column_name in self.clean_database.columns:
+            column_data = self.clean_database[column_name]
+            column_null_percentage = get_column_null_percentage(column_data)
+            if column_null_percentage > self.empty_attribute_threshold:
+                self.clean_database = self.clean_database.drop(columns=[column_name])
+
