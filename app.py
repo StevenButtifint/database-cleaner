@@ -86,6 +86,14 @@ class Window(QtWidgets.QMainWindow):
         self.refresh_combo_attribute_list('com_date_attribute', attributes)
         self.refresh_combo_attribute_list('com_syntax_attribute', attributes)
 
+    def show_output_location(self, raw_output_location):
+        if raw_output_location == "":
+            self.findChild(QLabel, 'lbl_output_location').setText("Output Location: Current Location")
+        else:
+            if len(raw_output_location) > 40:
+                raw_output_location = raw_output_location[-40:]
+            self.findChild(QLabel, 'lbl_output_location').setText("Output Location:   ..."+str(raw_output_location))
+
     def process_consistency_analysis(self):
         combo_attribute_list = self.findChild(QComboBox, 'combo_attribute_list')
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
