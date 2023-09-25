@@ -6,6 +6,7 @@ import sys
 
 from res.operations import *
 from res.constants import *
+from res.completeness import Completeness
 from res.threads import OperationThread
 from res.database import Database
 from res.validity import Validity
@@ -29,6 +30,7 @@ class Window(QtWidgets.QMainWindow):
         self.validity_thread = None
         self.completeness_thread = None
         self.consistency_thread = None
+        self.cleaning_thread = None
         self.setup()
         self.show()
 
@@ -177,6 +179,15 @@ class Window(QtWidgets.QMainWindow):
     def _setup_cleaning_page(self):
         btn_cleaning_back = self.findChild(QPushButton, 'btn_cleaning_back')
         btn_cleaning_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
+    def start_clean_operation(self):
+        self.findChild(QPushButton, 'btn_create_clean').setEnabled(False)
+        self.findChild(QLabel, 'lbl_output_notice').setText("Creating Clean Copy...")
+        self.cleaning = Cleaning(self.database)
+        self.set_cleaning_operations()
+        self.cleaning_thread = OperationThread(self.cleaning, lambda: self.cleaning.create_cleaned_copy())
+        self.cleaning_thread.completed.connect(self.finished_creating_copy)
+        self.cleaning_thread.start()
+
 
     def switch_operations_page(self):
         if self.check_database_selected():
