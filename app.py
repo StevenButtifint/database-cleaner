@@ -194,6 +194,9 @@ class Window(QtWidgets.QMainWindow):
         self.cleaning_thread.completed.connect(self.finished_creating_copy)
         self.cleaning_thread.start()
 
+    def finished_creating_copy(self):
+        self.findChild(QPushButton, 'btn_create_clean').setEnabled(True)
+        self.findChild(QLabel, 'lbl_output_notice').setText("Clean Copy Created")
 
     def switch_operations_page(self):
         if self.check_database_selected():
