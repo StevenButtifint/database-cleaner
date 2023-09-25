@@ -182,6 +182,9 @@ class Window(QtWidgets.QMainWindow):
     def _setup_cleaning_page(self):
         btn_cleaning_back = self.findChild(QPushButton, 'btn_cleaning_back')
         btn_cleaning_back.clicked.connect(lambda: self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'tools_page')))
+        btn_create_clean = self.findChild(QPushButton, 'btn_create_clean')
+        btn_create_clean.clicked.connect(lambda: self.start_clean_operation())
+
     def start_clean_operation(self):
         self.findChild(QPushButton, 'btn_create_clean').setEnabled(False)
         self.findChild(QLabel, 'lbl_output_notice').setText("Creating Clean Copy...")
