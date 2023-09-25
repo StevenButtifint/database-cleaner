@@ -128,3 +128,6 @@ class Cleaning:
     def clean_empty_records(self):
         self.clean_database = self.clean_database.dropna()
 
+    def clean_duplicate_records(self):
+        self.clean_database = self.clean_database.drop_duplicates()
+
