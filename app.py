@@ -96,6 +96,9 @@ class Window(QtWidgets.QMainWindow):
                 raw_output_location = raw_output_location[-40:]
             self.findChild(QLabel, 'lbl_output_location').setText("Output Location:   ..."+str(raw_output_location))
 
+    def get_output_location(self):
+        return self.findChild(QLineEdit, 'qle_selected_output').text()
+
     def process_consistency_analysis(self):
         combo_attribute_list = self.findChild(QComboBox, 'combo_attribute_list')
         combo_data_types = self.findChild(QComboBox, 'combo_data_types')
