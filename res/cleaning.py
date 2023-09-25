@@ -125,3 +125,6 @@ class Cleaning:
             if column_null_percentage > self.empty_attribute_threshold:
                 self.clean_database = self.clean_database.drop(columns=[column_name])
 
+    def clean_empty_records(self):
+        self.clean_database = self.clean_database.dropna()
+
