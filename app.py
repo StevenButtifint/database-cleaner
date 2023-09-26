@@ -230,11 +230,16 @@ class Window(QtWidgets.QMainWindow):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
         self.reset_analysis_page()
         self.completeness = Completeness(self.database)
-        self.set_cleaning_operations()
         self.completeness_thread = OperationThread(self.completeness, lambda: self.completeness.calculate_stats())
         self.completeness_thread.completed.connect(self.show_completeness_stats)
         self.completeness_thread.start()
 
+    def set_cleaning_operations(self):
+        chk_empty_attributes = self.findChild(QCheckBox, 'chk_empty_attributes')
+        if chk_empty_attributes.isChecked():
+            empty_attribute_threshold = int(self.findChild(QComboBox, 'empty_attribute_threshold').currentText())
+            self.cleaning.set_remove_empty_attributes(True)
+            self.cleaning.set_empty_attribute_threshold(empty_attribute_threshold)
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
