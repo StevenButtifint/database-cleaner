@@ -240,6 +240,9 @@ class Window(QtWidgets.QMainWindow):
             empty_attribute_threshold = int(self.findChild(QComboBox, 'empty_attribute_threshold').currentText())
             self.cleaning.set_remove_empty_attributes(True)
             self.cleaning.set_empty_attribute_threshold(empty_attribute_threshold)
+        chk_empty_records = self.findChild(QCheckBox, 'chk_empty_records')
+        if chk_empty_records.isChecked():
+            self.cleaning.set_remove_empty_records(True)
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
