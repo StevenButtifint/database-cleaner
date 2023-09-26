@@ -219,9 +219,12 @@ class Window(QtWidgets.QMainWindow):
         qle_selected_database.setText(self.database.get_current_directory())
 
     def set_output_dir(self):
-        self.database.set_output_directory()
+        output_folder = select_folder()
+        self.database.set_output_directory(output_folder)
         qle_selected_output = self.findChild(QLineEdit, 'qle_selected_output')
         qle_selected_output.setText(self.database.get_output_directory())
+        lbl_output_location = self.findChild(QLabel, 'lbl_output_location')
+        lbl_output_location.setText("Output folder: " + str(output_folder))
 
     def start_database_analysis(self):
         self.main_page_stack.setCurrentWidget(self.findChild(QWidget, 'analysis_results_page'))
