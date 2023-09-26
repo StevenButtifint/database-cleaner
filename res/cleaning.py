@@ -131,3 +131,9 @@ class Cleaning:
     def clean_duplicate_records(self):
         self.clean_database = self.clean_database.drop_duplicates()
 
+    def clean_numeric_outliers(self):
+        attribute_name = self.get_numerical_outliers_attribute()
+        minimum, maximum = self.get_numerical_range()
+        cleaned = (self.clean_database[attribute_name] >= minimum) & (self.clean_database[attribute_name] <= maximum)
+        self.clean_database = self.clean_database[cleaned]
+
