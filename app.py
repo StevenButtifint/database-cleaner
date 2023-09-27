@@ -243,6 +243,9 @@ class Window(QtWidgets.QMainWindow):
         chk_empty_records = self.findChild(QCheckBox, 'chk_empty_records')
         if chk_empty_records.isChecked():
             self.cleaning.set_remove_empty_records(True)
+        chk_duplicate_records = self.findChild(QCheckBox, 'chk_duplicate_records')
+        if chk_duplicate_records.isChecked():
+            self.cleaning.set_remove_duplicate_records(True)
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
