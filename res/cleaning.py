@@ -145,3 +145,10 @@ class Cleaning:
         cleaned = (self.clean_database[attribute] >= minimum_date) & (self.clean_database[attribute] <= maximum_date)
         self.clean_database = self.clean_database[cleaned]
 
+    def clean_invalid_syntax(self):
+        regex_format = convert_format_to_regex(self.get_syntax_format())
+        attribute = self.get_syntax_attribute()
+        for index, row in self.clean_database.iterrows():
+            if not re.match(regex_format, row[attribute]):
+                self.clean_database.drop(index, inplace=True)
+
