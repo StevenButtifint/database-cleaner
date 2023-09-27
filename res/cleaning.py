@@ -155,3 +155,18 @@ class Cleaning:
     def save_cleaned_database(self):
         dataframe_to_csv(self.get_clean_database(), self.database.get_name()[:-4]+"_cleaned")
 
+    def create_cleaned_copy(self):
+        self.set_clean_database(self.database.get_table())
+        if self.remove_empty_attributes:
+            self.clean_empty_attributes()
+        if self.remove_empty_records:
+            self.clean_empty_records()
+        if self.remove_duplicate_records:
+            self.clean_duplicate_records()
+        if self.remove_numerical_outliers:
+            self.clean_numeric_outliers()
+        if self.remove_date_outliers:
+            self.clean_date_outliers()
+        if self.remove_invalid_syntax:
+            self.clean_invalid_syntax()
+        self.save_cleaned_database()
