@@ -152,3 +152,6 @@ class Cleaning:
             if not re.match(regex_format, row[attribute]):
                 self.clean_database.drop(index, inplace=True)
 
+    def save_cleaned_database(self):
+        dataframe_to_csv(self.get_clean_database(), self.database.get_name()[:-4]+"_cleaned")
+
