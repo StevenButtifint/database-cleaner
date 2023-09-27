@@ -137,3 +137,11 @@ class Cleaning:
         cleaned = (self.clean_database[attribute_name] >= minimum) & (self.clean_database[attribute_name] <= maximum)
         self.clean_database = self.clean_database[cleaned]
 
+    def clean_date_outliers(self):
+        minimum, maximum = self.get_date_range()
+        minimum_date = pd.to_datetime(minimum, format='%Y/%m/%d')
+        maximum_date = pd.to_datetime(maximum, format='%Y/%m/%d')
+        attribute = self.get_date_outliers_attribute()
+        cleaned = (self.clean_database[attribute] >= minimum_date) & (self.clean_database[attribute] <= maximum_date)
+        self.clean_database = self.clean_database[cleaned]
+
