@@ -257,6 +257,17 @@ class Window(QtWidgets.QMainWindow):
                 self.cleaning.set_remove_numerical_outliers(True)
             except:
                 print("invalid entry for numerical range cleaning")
+        chk_date_range = self.findChild(QCheckBox, 'chk_date_range')
+        if chk_date_range.isChecked():
+            try:
+                qle_date_min = self.findChild(QLineEdit, 'qle_date_min').text()
+                qle_date_max = self.findChild(QLineEdit, 'qle_date_max').text()
+                date_attribute = self.findChild(QComboBox, 'com_date_attribute').currentText()
+                self.cleaning.set_date_outliers_attribute(date_attribute)
+                self.cleaning.set_date_range(qle_date_min, qle_date_max)
+                self.cleaning.set_remove_date_outliers(True)
+            except:
+                print("invalid entry for date range cleaning")
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
