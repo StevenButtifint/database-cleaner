@@ -246,6 +246,17 @@ class Window(QtWidgets.QMainWindow):
         chk_duplicate_records = self.findChild(QCheckBox, 'chk_duplicate_records')
         if chk_duplicate_records.isChecked():
             self.cleaning.set_remove_duplicate_records(True)
+        chk_numerical_range = self.findChild(QCheckBox, 'chk_numerical_range')
+        if chk_numerical_range.isChecked():
+            try:
+                qle_numerical_min = float(self.findChild(QLineEdit, 'qle_numerical_min').text())
+                qle_numerical_max = float(self.findChild(QLineEdit, 'qle_numerical_max').text())
+                numerical_attribute = self.findChild(QComboBox, 'com_numerical_attribute').currentText()
+                self.cleaning.set_numerical_range(qle_numerical_min, qle_numerical_max)
+                self.cleaning.set_numerical_outliers_attribute(numerical_attribute)
+                self.cleaning.set_remove_numerical_outliers(True)
+            except:
+                print("invalid entry for numerical range cleaning")
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
