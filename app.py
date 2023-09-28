@@ -268,6 +268,16 @@ class Window(QtWidgets.QMainWindow):
                 self.cleaning.set_remove_date_outliers(True)
             except:
                 print("invalid entry for date range cleaning")
+        chk_syntax = self.findChild(QCheckBox, 'chk_syntax')
+        if chk_syntax.isChecked():
+            try:
+                syntax_attribute = self.findChild(QComboBox, 'com_syntax_attribute').currentText()
+                syntax = self.findChild(QLineEdit, 'qle_syntax').text()
+                self.cleaning.set_syntax_attribute(syntax_attribute)
+                self.cleaning.set_syntax_format(syntax)
+                self.cleaning.set_remove_invalid_syntax(True)
+            except:
+                print("invalid entry for syntax cleaning")
 
     def show_completeness_stats(self):
         self.update_overall_null_percent(self.completeness.get_overall_null_percentage())
